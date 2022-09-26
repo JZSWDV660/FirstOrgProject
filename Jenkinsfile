@@ -2,6 +2,10 @@
 
 node {
    
+   env.NODEJS_HOME = "${tool 'Node18'}"
+   env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
+   sh 'npm --version'
+   
    stage 'Checkout'
         checkout scm
 
